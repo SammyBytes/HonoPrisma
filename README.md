@@ -96,7 +96,7 @@ export default app;
 
 ## API Reference
 
-### `createPrismaPlugin(client, options?)`
+### `createPrismaPlugin(options?)`
 
 Creates the Prisma middleware for your Hono app.
 
