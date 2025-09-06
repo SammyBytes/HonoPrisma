@@ -1,5 +1,5 @@
 {
-  "name": "hono-prisma",
+  "name": "hono-prisma-plugin",
   "version": "0.0.2",
   "description": "Prisma ORM plugin for HonoJS framework",
   "main": "src/index.ts",
@@ -16,10 +16,7 @@
   "scripts": {
     "build": "tsc && bun build src/index.ts --outdir dist --target bun --external:hono --external:@prisma/client --minify",
     "build:types": "tsc --declaration --emitDeclarationOnly --outDir dist",
-    "dev": "bun run src/index.ts",
-    "test": "bun test",
-    "prepare": "bun run build",
-    "prepublishOnly": "bun run build"
+    "prepare": "bun run build"
   },
   "files": [
     "src",
@@ -33,6 +30,11 @@
     "bun"
   ],
   "author": "Samuel Luciano",
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:SammyBytes/HonoPrisma.git"
+  },
   "license": "MIT",
   "type": "module",
   "devDependencies": {
