@@ -197,28 +197,6 @@ app.post("/transfer", async (c) => {
 });
 ```
 
-## Error Handling
-
-```typescript
-app.get("/users/:id", async (c) => {
-  try {
-    const db = getPrisma(c) as PrismaClient;
-    const user = await db.user.findUnique({
-      where: { id: parseInt(c.req.param("id")) },
-    });
-
-    if (!user) {
-      return c.json({ error: "User not found" }, 404);
-    }
-
-    return c.json(user);
-  } catch (error) {
-    console.error("Database error:", error);
-    return c.json({ error: "Internal server error" }, 500);
-  }
-});
-```
-
 ## Project Setup
 
 ### Database Commands
