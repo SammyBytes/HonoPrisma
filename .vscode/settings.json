@@ -1,0 +1,10 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange",
+  "workbench.colorTheme": "Bluloco Dark",
+  "workbench.statusBar.visible": true,
+  "git.enableSmartCommit": true,
+  "editor.minimap.enabled": false
+}
