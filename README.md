@@ -257,7 +257,7 @@ Make sure your `package.json` has the correct peer dependencies:
     "@prisma/client": ">=4.0.0"
   }
 }
-
+```
 
 ## Requirements
 
@@ -276,4 +276,3 @@ MIT
 3. Make your changes
 4. Add tests if applicable
 5. Submit a pull request
-```

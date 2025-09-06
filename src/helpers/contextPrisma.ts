@@ -6,7 +6,7 @@ export const getPrisma = (
   c: Context,
   key: string = PRISMA_CONTEXT_KEY
 ): PrismaClient => {
-  const prisma = c.get(key);
+  const prisma = c.get(key) as PrismaClient | undefined;
   if (!prisma) {
     throw new Error(
       `Prisma client not found in context with key "${key}". Make sure the prisma middleware is applied.`
