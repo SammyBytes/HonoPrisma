@@ -2,23 +2,27 @@
   "name": "hono-prisma",
   "version": "0.0.2",
   "description": "Prisma ORM plugin for HonoJS framework",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "types": "src/index.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./src/index.ts",
+      "require": "./src/index.ts",
+      "types": "./src/index.ts"
     },
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "tsc && bun build src/index.ts --outdir dist --target bun --external:hono --external:typescript --minify",
+    "build": "tsc && bun build src/index.ts --outdir dist --target bun --external:hono --external:@prisma/client --minify",
+    "build:types": "tsc --declaration --emitDeclarationOnly --outDir dist",
+    "dev": "bun run src/index.ts",
     "test": "bun test",
-    "prepare": "bun run build"
+    "prepare": "bun run build",
+    "prepublishOnly": "bun run build"
   },
   "files": [
+    "src",
     "dist"
   ],
   "keywords": [
@@ -32,14 +36,12 @@
   "license": "MIT",
   "type": "module",
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "typescript": "^5.3.3"
   },
   "peerDependencies": {
-    "typescript": "^5",
-    "hono": "^4.9.6",
-    "@prisma/client": "^5"
+    "hono": ">=4.0.0",
+    "@prisma/client": ">=4.0.0"
   },
-  "dependencies": {
-    "hono": "^4.9.6"
-  }
+  "dependencies": {}
 }
