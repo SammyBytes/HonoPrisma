@@ -1,6 +1,7 @@
 import type { ContextVariableMap } from "hono";
 import { createMiddleware } from "hono/factory";
-import type { IOptionsMiddleware } from "./interfaces/IOptionsMiddleware";
+import "./types.d.ts";
+import { PrismaPluginOptions } from "./types/options.js";
 
 /**
  * Prisma Middleware for Hono
@@ -9,9 +10,9 @@ import type { IOptionsMiddleware } from "./interfaces/IOptionsMiddleware";
  * @param options
  * @returns
  */
-export const prismaMiddleware = (options?: IOptionsMiddleware) => {
+export const prismaMiddleware = (options?: PrismaPluginOptions) => {
   return createMiddleware(async (context, next) => {
-    const prisma = options?.prisma;
+    const prisma = options?.client;
 
     if (!prisma) {
       throw new Error(
